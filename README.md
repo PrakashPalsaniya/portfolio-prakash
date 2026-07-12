@@ -2,7 +2,7 @@
 
 A personal portfolio inspired by GitHub’s profile experience, built to showcase my work in backend engineering, AI-native applications, and distributed systems.
 
-🔗 **Live site:** [prakash-portfolio.vercel.app](https://prakash-portfolio.vercel.app)
+🔗 **Live site:** [prakash-palsaniya.vercel.app](https://prakash-palsaniya.vercel.app)
 
 ## ✨ Highlights
 
