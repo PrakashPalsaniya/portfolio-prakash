@@ -64,15 +64,6 @@ export const RabbitMQ = (p) => (
   </svg>
 )
 
-export const Kafka = (p) => (
-  <svg viewBox="0 0 24 24" width="100%" height="100%" {...p}>
-    <path
-      fill="#e8eaf0"
-      d="M9.1 2.3a2 2 0 1 1 1.2 3.62v2.2a3.2 3.2 0 0 1 1.66.98l1.9-1.1a2 2 0 1 1 .78 1.66l-1.9 1.1a3.2 3.2 0 0 1 0 1.9l1.9 1.08a2 2 0 1 1-.78 1.66l-1.9-1.1a3.2 3.2 0 0 1-1.66.98v2.2a2 2 0 1 1-1.2 0v-2.2a3.2 3.2 0 1 1 0-6.32v-2.2A2 2 0 0 1 9.1 2.3Zm.6 8.1a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2Z"
-    />
-  </svg>
-)
-
 export const AWS = (p) => (
   <svg viewBox="0 0 24 24" width="100%" height="100%" {...p}>
     <path
@@ -233,23 +224,6 @@ export const RestMark = (p) => (
     <path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 6l-3 12" />
   </svg>
 )
-
-export const techLogos = [
-  { name: 'Node.js', Logo: Nodejs },
-  { name: 'Express', Logo: Express },
-  { name: 'MongoDB', Logo: MongoDB },
-  { name: 'PostgreSQL', Logo: Postgres },
-  { name: 'MySQL', Logo: MySQL },
-  { name: 'Redis', Logo: Redis },
-  { name: 'RabbitMQ', Logo: RabbitMQ },
-  { name: 'Kafka', Logo: Kafka },
-  { name: 'AWS', Logo: AWS },
-  { name: 'Docker', Logo: Docker },
-  { name: 'Socket.IO', Logo: SocketIO },
-  { name: 'JavaScript', Logo: JavaScript },
-  { name: 'Python', Logo: Python },
-  { name: 'C++', Logo: Cpp },
-]
 
 export const FinmateLogo = (p) => (
   <svg viewBox="0 0 64 64" width="100%" height="100%" {...p}>
