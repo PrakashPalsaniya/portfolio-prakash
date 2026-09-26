@@ -29,10 +29,10 @@ export const languages = [
 ]
 
 export const stats = [
-  { value: '85%', label: 'Latency cut with Redis caching (800ms → 120ms)' },
-  { value: '500+', label: 'DSA problems solved on LeetCode & GFG' },
-  { value: '4', label: 'Production apps shipped, end to end' },
-  { value: '8.4', label: 'CGPA · B.Tech IT, NIT Srinagar' },
+  { label: 'architecture', value: 'Microservices & Event-Driven' },
+  { label: 'ai_focus', value: 'Agentic RAG & LLM Workflows' },
+  { label: 'apps_shipped', value: 4 },
+  { label: 'status', value: 'Looking for exciting opportunities 🚀' },
 ]
 
 export const projects = [

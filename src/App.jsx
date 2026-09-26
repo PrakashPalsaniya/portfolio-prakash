@@ -8,10 +8,12 @@ import GhSkills from './components/GhSkills'
 import GhContact from './components/GhContact'
 import GhFooter from './components/GhFooter'
 import ErrorBoundary from './components/ErrorBoundary'
+import CommandPalette from './components/CommandPalette'
 
 export default function App() {
   return (
     <ErrorBoundary>
+      <CommandPalette />
       <GhHeader />
       <GhTabs />
       <div className="gh-body">

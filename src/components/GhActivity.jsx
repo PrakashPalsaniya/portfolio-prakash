@@ -1,11 +1,18 @@
 import { timeline, profile } from '../data'
 import { RepoIcon, StarIcon, DotFill } from './GhIcons'
+import { motion } from 'framer-motion'
 
 const icons = [RepoIcon, StarIcon, DotFill]
 
 export default function GhActivity() {
   return (
-    <section className="gh-activity" id="about">
+    <motion.section 
+      className="gh-activity" id="about"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.5 }}
+    >
       <h2>Activity</h2>
       <div>
         <div className="act-item">
@@ -28,6 +35,6 @@ export default function GhActivity() {
           )
         })}
       </div>
-    </section>
+    </motion.section>
   )
 }

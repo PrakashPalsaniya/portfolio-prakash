@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import { skillGroups } from '../data'
 import {
   Nodejs, Express, SocketIO, MongoDB, Postgres, MySQL, Redis, RabbitMQ,
@@ -54,7 +55,13 @@ const groupIcon = {
 
 export default function GhSkills() {
   return (
-    <section className="gh-readme" id="stack">
+    <motion.section 
+      className="gh-readme" id="stack"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="gh-readme-head">
         <RepoIcon />
         <b>tech-stack</b>&nbsp;/&nbsp;skills.md
@@ -64,28 +71,38 @@ export default function GhSkills() {
         <p className="sub">Tools and technologies I build with, by area.</p>
 
         <div className="stack-groups">
-          {skillGroups.map((g) => (
-            <div className="stack-group" key={g.title}>
-              <div className="stack-group-h">
-                <span className="sg-emoji" aria-hidden>{groupIcon[g.title] || '▹'}</span>
-                {g.title}
-                <span className="sg-count">{g.items.length}</span>
+          {skillGroups.map((g, i) => {
+            const isReverse = i % 2 !== 0;
+            // Duplicate the items for seamless infinite scroll
+            const itemsToRender = [...g.items, ...g.items, ...g.items];
+            
+            return (
+              <div className="stack-group" key={g.title}>
+                <div className="stack-group-h">
+                  <span className="sg-emoji" aria-hidden>{groupIcon[g.title] || '▹'}</span>
+                  {g.title}
+                </div>
+                <div className="marquee-container">
+                  <div 
+                    className="marquee-content" 
+                    style={{ animationDirection: isReverse ? 'reverse' : 'normal', animationDuration: `${g.items.length * 4}s` }}
+                  >
+                    {itemsToRender.map((it, idx) => {
+                      const Logo = logoFor(it)
+                      return (
+                        <span className="stack-chip" key={`${it}-${idx}`}>
+                          {Logo && <span className="stack-mark"><Logo /></span>}
+                          {it}
+                        </span>
+                      )
+                    })}
+                  </div>
+                </div>
               </div>
-              <div className="stack-items">
-                {g.items.map((it) => {
-                  const Logo = logoFor(it)
-                  return (
-                    <span className="stack-chip" key={it}>
-                      {Logo && <span className="stack-mark"><Logo /></span>}
-                      {it}
-                    </span>
-                  )
-                })}
-              </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }
